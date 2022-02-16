@@ -1,3 +1,31 @@
+@font-face {
+  font-family: 'Alice';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/alice/v18/OpNCnoEEmtHa6FcJ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Josefin Slab';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/josefinslab/v18/lW-swjwOK3Ps5GSJlNNkMalNpiZe_ldbOR4W79msd3k.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Josefin Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/josefinslab/v18/lW-swjwOK3Ps5GSJlNNkMalNpiZe_ldbOR4W71msd3k.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Josefin Slab';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/josefinslab/v18/lW-swjwOK3Ps5GSJlNNkMalNpiZe_ldbOR4W776rd3k.ttf) format('truetype');
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -66,8 +94,25 @@ textarea {
 button {
   cursor: pointer;
 }
+.font-primary {
+  font-family: 'Josefin Slab', 'Times New Roman', Times, serif;
+}
+.font-secondary {
+  font-family: 'Alice', 'Times New Roman', Times, serif;
+}
 .form-add {
   flex-grow: 1;
+  min-width: 20%;
+}
+@media (max-width: 980px) {
+  .form-add {
+    min-width: 30%;
+  }
+}
+@media (max-width: 640px) {
+  .form-add {
+    min-width: 45%;
+  }
 }
 .form-add h2 {
   margin-bottom: 1rem;
@@ -75,41 +120,72 @@ button {
 .form-add form label {
   font-size: 1.15em;
 }
-.form-add form input {
-  background-color: #eee;
+.form-add form input,
+.form-add form textarea {
+  background-color: #e5ebf1;
   font-size: .8em;
   padding: .5rem;
   margin: .5rem 0 1rem;
   color: #666666;
 }
-.form-add form input::placeholder {
+.form-add form input::placeholder,
+.form-add form textarea::placeholder {
   color: #999999;
 }
 .form-add form button {
   border-radius: .2rem;
-  background-color: #ffffff;
-  box-shadow: inset 3px 3px 1px #ffffff77, 1px 1px 1px #00000077;
-  padding: .5rem;
-}
-.form-add form button:active {
-  background-color: #d5d5d5;
-  box-shadow: inset 3px 3px 1px #00000077, 3px 3px 1px #ffffff77 ;
+  background-color: #823038;
+  box-shadow: inset 3px 3px 5px #ffffff77, 1px 1px 5px #00000077;
+  padding: .7rem 0 .5rem;
+  color: #afc2d5;
+  transition: all 0.1s ease-in;
 }
 .form-add form button:hover {
-  background-color: #e6e6e6;
+  background-color: #a73e48;
+}
+.form-add form button:active {
+  background-color: #5d2228;
+  box-shadow: inset 3px 3px 5px #00000077, 3px 3px 5px #ffffff;
+  padding: .5rem 0 .6rem;
 }
 .product {
-  background-color: #eee;
+  background-color: #e5ebf1;
   padding: 10px;
+}
+.product header h2 {
+  color: #823038;
+}
+.product .product-card_title {
+  padding-top: 10px;
+}
+.product .product-card_price {
+  padding-top: 10px;
+}
+.product .product-card_price p {
+  display: inline-block;
+}
+.product .product-card_price .product-card_price__value {
+  font-family: 'Alice', 'Times New Roman', Times, serif;
+  padding-left: 10px;
 }
 .showroom {
   display: grid;
   grid-template-columns: auto auto auto;
   flex-grow: 3;
 }
+@media (max-width: 980px) {
+  .showroom {
+    grid-template-columns: auto auto;
+  }
+}
+@media (max-width: 640px) {
+  .showroom {
+    grid-template-columns: auto;
+  }
+}
 .showroom .showroom-item {
   margin-bottom: 30px;
-  max-width: 240px;
+  max-width: 90%;
   max-height: 400px;
   display: inline;
 }
@@ -122,24 +198,26 @@ h3 {
 }
 *,
 ::placeholder {
+  font-family: 'Josefin Slab', 'Times New Roman', Times, serif;
   font-size: 16px;
   font-weight: 300;
 }
 h1 {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Alice', 'Times New Roman', Times, serif;
   font-size: 1.5em;
 }
 h2 {
-  font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Alice', 'Times New Roman', Times, serif;
   font-size: 1.3em;
 }
 h3 {
-  font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Josefin Slab', 'Times New Roman', Times, serif;
   font-size: 1.15em;
+  font-weight: 700;
 }
 .app-content {
   height: 100vh;
-  background-color: #ddd;
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: flex-start;

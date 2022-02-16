@@ -1,5 +1,12 @@
 .form-add{
   flex-grow: 1;
+  min-width: 20%;
+  @media @breaking-point-980 {
+    min-width: 30%;
+  }
+  @media @breaking-point-640 {
+    min-width: 45%;
+  }
   h2{
     margin-bottom: 1rem;
   }
@@ -7,7 +14,7 @@
     label{
       font-size: 1.15em;
     }
-    input{
+    input, textarea{
       background-color: @color-bg-item;
       font-size: .8em;
       padding: .5rem;
@@ -19,15 +26,18 @@
     }
     button{
       border-radius: .2rem;
-      background-color: lighten(@color-bg-item, 10);
-      box-shadow: inset 3px 3px 1px #ffffff77, 1px 1px 1px #00000077;
-      padding: .5rem;
-      &:active{
-        background-color: darken(@color-bg-item, 10);
-        box-shadow: inset 3px 3px 1px #00000077, 3px 3px 1px #ffffff77 ;
-      }
+      background-color: @color-2;
+      box-shadow: inset 3px 3px 5px #ffffff77, 1px 1px 5px #00000077;
+      padding: .7rem 0 .5rem;
+      color: @color-4;
+      transition: all .1s ease-in;
       &:hover{
-        background-color: darken(@color-bg-item, 3);
+        background-color: lighten(@color-2, 10%);
+      }
+      &:active{
+        background-color: darken(@color-2, 10%);
+        box-shadow: inset 3px 3px 5px #00000077, 3px 3px 5px #ffffff;
+        padding: .5rem 0 .6rem;
       }
     }
   } 

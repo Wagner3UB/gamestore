@@ -2,9 +2,15 @@
   display: grid;
   grid-template-columns: auto auto auto;
   flex-grow: 3;
+  @media @breaking-point-980 {
+    grid-template-columns: auto auto;
+  }
+  @media @breaking-point-640 {
+    grid-template-columns: auto;
+  }
   .showroom-item{
     margin-bottom: 30px;
-    max-width: 240px;
+    max-width: 90%;
     max-height: 400px;
     display: inline;
   }
