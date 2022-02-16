@@ -94,6 +94,10 @@ textarea {
 button {
   cursor: pointer;
 }
+::selection {
+  background: #1e000e;
+  color: #afc2d5;
+}
 .font-primary {
   font-family: 'Josefin Slab', 'Times New Roman', Times, serif;
 }
@@ -103,6 +107,7 @@ button {
 .form-add {
   flex-grow: 1;
   min-width: 33%;
+  max-width: 33%;
 }
 @media (max-width: 980px) {
   .form-add {
@@ -148,6 +153,9 @@ button {
   background-color: #5d2228;
   box-shadow: inset 3px 3px 5px #00000077, 3px 3px 5px #ffffff;
   padding: .5rem 0 .6rem;
+}
+.form-add .lorem {
+  color: transparent;
 }
 .product {
   background-color: #e5ebf1;

@@ -54,6 +54,7 @@ class FormAdd extends Component {
           />
           <button>Add product</button>
         </form>
+        <p className='lorem'>Lucas ipsum dolor sit amet kashyyyk jabba solo yoda amidala jinn organa jango darth yavin. Jabba antilles antilles tatooine skywalker organa coruscant. Dooku leia darth lars skywalker organa. Dooku naboo fett mace maul. Yavin r2-d2 ponda lars yavin lando ackbar binks padmé. Utapau padmé skywalker jabba watto fett. </p>
       </section> 
      );
   }
