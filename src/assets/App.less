@@ -1,0 +1,35 @@
+@import "./reset";
+@import "./variables";
+@import "./mixins";
+@import "../components/FormAdd/style-FormAdd";
+@import "../components/Product/style-Product";
+@import "../components/Showroom/style-Showroom";
+
+*, ::placeholder, h1, h2, h3{
+  color: @color-font-primary;
+}
+*, ::placeholder{
+  font-size: 16px;
+  font-weight: 300;
+}
+h1{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: @font-size-l;
+}
+h2{
+  font-family: @font-primary;
+  font-size: @font-size-m;
+}
+h3{
+  font-family: @font-primary;
+  font-size: @font-size-s;
+}
+
+.app-content{
+  height: 100vh;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}

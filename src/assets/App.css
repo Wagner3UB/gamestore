@@ -1,0 +1,147 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body,
+div,
+section,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+hr,
+li,
+a,
+img,
+strong,
+em,
+span,
+form,
+input,
+textarea,
+label,
+button,
+input::placeholder {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-weight: inherit;
+}
+ul,
+ol {
+  list-style-type: none;
+}
+img {
+  border: none;
+}
+input,
+textarea,
+button,
+select {
+  background-color: transparent;
+  border: none;
+  display: block;
+  width: 100%;
+  outline: none;
+  box-shadow: none;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: none;
+}
+textarea {
+  resize: none;
+}
+button {
+  cursor: pointer;
+}
+.form-add {
+  flex-grow: 1;
+}
+.form-add h2 {
+  margin-bottom: 1rem;
+}
+.form-add form label {
+  font-size: 1.15em;
+}
+.form-add form input {
+  background-color: #eee;
+  font-size: .8em;
+  padding: .5rem;
+  margin: .5rem 0 1rem;
+  color: #666666;
+}
+.form-add form input::placeholder {
+  color: #999999;
+}
+.form-add form button {
+  border-radius: .2rem;
+  background-color: #ffffff;
+  box-shadow: inset 3px 3px 1px #ffffff77, 1px 1px 1px #00000077;
+  padding: .5rem;
+}
+.form-add form button:active {
+  background-color: #d5d5d5;
+  box-shadow: inset 3px 3px 1px #00000077, 3px 3px 1px #ffffff77 ;
+}
+.form-add form button:hover {
+  background-color: #e6e6e6;
+}
+.product {
+  background-color: #eee;
+  padding: 10px;
+}
+.showroom {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  flex-grow: 3;
+}
+.showroom .showroom-item {
+  margin-bottom: 30px;
+  max-width: 240px;
+  max-height: 400px;
+  display: inline;
+}
+*,
+::placeholder,
+h1,
+h2,
+h3 {
+  color: #333;
+}
+*,
+::placeholder {
+  font-size: 16px;
+  font-weight: 300;
+}
+h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.5em;
+}
+h2 {
+  font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.3em;
+}
+h3 {
+  font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.15em;
+}
+.app-content {
+  height: 100vh;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
