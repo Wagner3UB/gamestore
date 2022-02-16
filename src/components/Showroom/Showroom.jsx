@@ -6,10 +6,14 @@ class Showroom extends Component {
   render() { 
     return ( 
       <ul className='showroom'>
-        {Array.of(1,2,3,4,5,6).map((category, index) => {
+        {this.props.product.map((product, index) => {
           return (
             <li className='showroom-item' key={index}>
-              <Product/>
+              <Product
+              name={product.name} 
+              description={product.description} 
+              price={product.price}
+              />
             </li>
           )
         })}

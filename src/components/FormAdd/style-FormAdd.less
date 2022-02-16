@@ -1,11 +1,13 @@
 .form-add{
   flex-grow: 1;
-  min-width: 20%;
+  min-width: 33%;
   @media @breaking-point-980 {
     min-width: 30%;
   }
   @media @breaking-point-640 {
-    min-width: 45%;
+    min-width: 100%;
+    margin-bottom: 30px;
+    flex-grow: unset;
   }
   h2{
     margin-bottom: 1rem;
@@ -16,7 +18,6 @@
     }
     input, textarea{
       background-color: @color-bg-item;
-      font-size: .8em;
       padding: .5rem;
       margin: .5rem 0 1rem;
       color: lighten(@color-font-primary, 20%);

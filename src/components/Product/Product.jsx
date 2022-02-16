@@ -6,12 +6,12 @@ class Product extends Component {
     return ( 
       <section className='product'>
         <header className='product-title'>
-          <h2>Titulo</h2>
+          <h2>{this.props.name}</h2>
         </header>
         <ul className='product-card'>
           <li className='product-card_title'><h3>Description:</h3></li>
-          <li className='product-card_description'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas urna justo, tempus at magna eget, vestibulum mollis lorem. Quisque a justo in lacus rutrum faucibus at non libero. Maecenas et lacus luctus, ornare ligula a, fermentum sem.</p></li>
-          <li className='product-card_price'><p className='product-card_price__title'>Price:</p><p className='product-card_price__value'>10,00€</p></li>
+          <li className='product-card_description'><p>{this.props.description}</p></li>
+          <li className='product-card_price'><p className='product-card_price__title'>Price:</p><p className='product-card_price__value'>{this.props.price}€</p></li>
         </ul>  
       </section>
      );

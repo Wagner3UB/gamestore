@@ -1,17 +1,23 @@
 .showroom{
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 33% 33% 33%;
   flex-grow: 3;
   @media @breaking-point-980 {
     grid-template-columns: auto auto;
   }
   @media @breaking-point-640 {
-    grid-template-columns: auto;
+    grid-template-columns: 100%;
+    flex-grow: unset;
   }
   .showroom-item{
     margin-bottom: 30px;
     max-width: 90%;
-    max-height: 400px;
-    display: inline;
+    height: 400px;
+    overflow: auto;
+    display: inline-block;
+    @media @breaking-point-640 {
+      height: unset;
+      max-width: 100%;
+    }
   }
 }
