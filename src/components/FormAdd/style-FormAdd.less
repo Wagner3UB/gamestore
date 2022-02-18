@@ -17,14 +17,9 @@
     label{
       font-size: 1.15em;
     }
-    input, textarea{
-      background-color: @color-bg-item;
-      padding: .5rem;
+    input, textarea, select{
+      .input-area;
       margin: .5rem 0 1rem;
-      color: lighten(@color-font-primary, 20%);
-      &::placeholder{
-        color: lighten(@color-font-primary, 40%)
-      }
     }
     button{
       border-radius: .2rem;

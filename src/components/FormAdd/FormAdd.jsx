@@ -6,13 +6,14 @@ class FormAdd extends Component {
     this.productName = "";
     this.productDescription = "";
     this.productPrice = "";
+    this.productCategory = "";
     this.handleProductName = this.handleProductName.bind(this);
   }
 
-  handleProductName(e){
+  handleProductName(e) {
     e.stopPropagation();
     this.productName = e.target.value;
-  };
+  }
   handleProductDescription = (e) => {
     e.stopPropagation();
     this.productDescription = e.target.value;
@@ -27,8 +28,13 @@ class FormAdd extends Component {
     this.props.addProduct(
       this.productName,
       this.productDescription,
-      this.productPrice
+      this.productPrice, 
+      this.productCategory
     );
+  };
+  handleCategorieSelection = (e) => {
+    e.preventDefault();
+    this.productCategory = e.target.value;
   };
 
   render() {
@@ -42,6 +48,13 @@ class FormAdd extends Component {
             placeholder="Nome"
             onChange={this.handleProductName}
           />
+          <select onChange={this.handleCategorieSelection}>
+            <option>Select Category</option>
+
+            {this.props.categories.map((category, index) => {
+              return <option key={index}>{category}</option>;
+            })}
+          </select>
 
           <label htmlFor="description">Description</label>
           <textarea

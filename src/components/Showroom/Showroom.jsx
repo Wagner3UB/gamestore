@@ -13,6 +13,7 @@ class Showroom extends Component {
                 name={product.name}
                 description={product.description}
                 price={product.price}
+                category={product.category}
                 deleteProduct={this.props.deleteProduct}
               />
             </li>

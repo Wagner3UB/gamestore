@@ -4,3 +4,11 @@
 .font-secondary{
   font-family: @font-secondary;
 }
+.input-area{
+  background-color: @color-bg-item;
+  padding: .5rem;
+  color: lighten(@color-font-primary, 20%);
+  &::placeholder{
+    color: lighten(@color-font-primary, 40%)
+  }
+}

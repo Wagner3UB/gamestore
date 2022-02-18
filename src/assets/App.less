@@ -1,44 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap&family=Josefin+Slab:wght@200;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alice&display=swap&family=Josefin+Slab:wght@200;400;700&display=swap");
 @import "./reset";
 @import "./variables";
 @import "./mixins";
 @import "../components/FormAdd/style-FormAdd";
 @import "../components/Product/style-Product";
 @import "../components/Showroom/style-Showroom";
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import "../components/Categories/style-Categories";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-*, ::placeholder, h1, h2, h3{
+*,
+::placeholder,
+h1,
+h2,
+h3 {
   color: @color-font-primary;
 }
-*, ::placeholder{
+*,
+::placeholder {
   .font-primary;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.2em;
 }
-h1{
+h1 {
   .font-secondary;
   font-size: @font-size-l;
+  font-weight: 700;
 }
-h2{
+h2 {
   .font-secondary;
   font-size: @font-size-m;
 }
-h3{
+h3 {
   .font-primary;
   font-size: @font-size-s;
   font-weight: 700;
 }
 
-.app-content{
+.app-content {
   height: 100vh;
   background-color: @color-bg-primary;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 20px;
-  @media @breaking-point-640 {
-    flex-direction: column-reverse;
-    height: auto;
+  .app-content_section{
+    flex-grow: 3; 
+    h1{
+      color: @color-5;
+      padding-bottom: 20px;
+    }
   }
-}
+    @media @breaking-point-640 {
+      flex-direction: column-reverse;
+      height: auto;
+    }
+  }
+
