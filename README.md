@@ -1,6 +1,7 @@
 # `Hello World!` 🌍
 
 ### `THE PROJECT:` Game Store | React/JS, HTML, LESS/CSS
+v2- Version with multiples state components
 
 <br>
 
