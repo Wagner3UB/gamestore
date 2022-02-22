@@ -1,6 +1,23 @@
 import React, { Component } from "react";
 
 class Product extends Component {
+
+  constructor(){
+    super();
+    this.state = { productsArray: [] };
+    this.newCategory = this.newCategory.bind(this);
+  }
+
+  componentDidMount(){
+    this.props.categories.subscribe(this.newCategory)
+  }
+  componentWillUnmount(){
+    this.props.categories.unsubscribe(this.newCategory)
+  }
+  newCategory(category){
+    this.setState(...this.state, category )
+  }
+
   delete = () => {
     const index = this.props.index;
     this.props.deleteProduct(index);

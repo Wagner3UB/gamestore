@@ -1,6 +1,22 @@
 import React, { Component } from "react";
 
 class Categories extends Component {
+  constructor(){
+    super();
+    this.state = { categoriesArray: [] };
+    this.newCategory = this.newCategory.bind(this);
+  }
+
+  componentDidMount(){
+    this.props.categories.subscribe(this.newCategory)
+  }
+  componentWillUnmount(){
+    this.props.categories.unsubscribe(this.newCategory)
+  }
+  newCategory(category){
+    this.setState(...this.state, category )
+  }
+
   handleAddCategory = (e) => {
     if (e.key === "Enter") {
       const category = e.target.value;
