@@ -8,6 +8,17 @@ class FormAdd extends Component {
     this.productPrice = "";
     this.productCategory = "";
     this.handleProductName = this.handleProductName.bind(this);
+    this.state = { categoriesArray: [] };
+    this.newCategory = this.newCategory.bind(this);
+  }
+  componentDidMount(){
+    this.props.categories.subscribe(this.newCategory)
+  }
+  componentWillUnmount(){
+    this.props.categories.unsubscribe(this.newCategory)
+  }
+  newCategory(category){
+    this.setState({...this.state, category})
   }
 
   handleProductName(e) {
@@ -23,8 +34,6 @@ class FormAdd extends Component {
     this.productPrice = e.target.value;
   };
   addProduct = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
     this.props.addProduct(
       this.productName,
       this.productDescription,
@@ -32,26 +41,27 @@ class FormAdd extends Component {
       this.productCategory
     );
   };
-  handleCategorieSelection = (e) => {
+  callbackFunctionOnSubmit = (e) => {
     e.preventDefault();
-    this.productCategory = e.target.value;
-  };
+    e.stopPropagation();
+    this.productCategory = document.querySelector("select").value;
+    this.addProduct();
+  }
 
   render() {
     return (
       <section className="form-add">
         <h2>Insert a product</h2>
-        <form onSubmit={this.addProduct}>
+        <form onSubmit={this.callbackFunctionOnSubmit}>
           <label htmlFor="name">Product name</label>
           <input
             id="name"
             placeholder="Nome"
             onChange={this.handleProductName}
           />
-          <select onChange={this.handleCategorieSelection}>
-            <option>Select Category</option>
-
-            {this.props.categories.map((category, index) => {
+          <select>
+            <option value={"uncategorized"} >Select Category</option>
+            {this.props.categories.categoriesArray.map((category, index) => {
               return <option key={index}>{category}</option>;
             })}
           </select>

@@ -1,6 +1,5 @@
 export default class CategoriesState{
   constructor(){
-    super();
     this.categoriesArray = [];
     this.subscribed = [];
   }
@@ -8,7 +7,7 @@ export default class CategoriesState{
     this.subscribed.push(func);
   }
   unsubscribe = (func) => {
-    this.subscribed = this.subscribed.filter( f => f !== func)
+    this.subscribed = this.subscribed.filter( (f) => f !== func)
   }
   notificate = () => {
     this.subscribed.forEach((func) => {

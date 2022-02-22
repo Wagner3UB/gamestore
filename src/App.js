@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import FormAdd from "./components/FormAdd/FormAdd";
 import Showroom from "./components/Showroom/Showroom";
-import Categories from "./components/Categories/Caterogies";
-import "./assets/App.css";
+import Categories from "./components/Categories/Categories";
 import CategoriesState from "./data/CategoriesState";
 import ProductState from "./data/ProductState";
+import "./assets/App.css";
 
 class App extends Component {
   constructor() {
@@ -21,7 +21,7 @@ class App extends Component {
           <h1>GameStore</h1>
           <Categories
             delete = {this.category}
-            addCategory={this.category}
+            addCategory={this.category.addCategory}
             categories={this.category}
           />
           <Showroom
@@ -29,7 +29,7 @@ class App extends Component {
             deleteProduct={this.product}
           />
         </section>
-        <FormAdd categories={this.state.categories} addProduct={this.addProduct} />
+        <FormAdd categories={this.category} addProduct={this.product.addProduct.bind(this.product)} />
       </section>
     );
   }

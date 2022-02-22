@@ -1,7 +1,6 @@
 
 export default class ProductState{
   constructor(){
-    super();
     this.productsArray = [];
     this.subscribed = [];
   }

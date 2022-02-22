@@ -14,7 +14,7 @@ class Categories extends Component {
     this.props.categories.unsubscribe(this.newCategory)
   }
   newCategory(category){
-    this.setState(...this.state, category )
+    this.setState( {...this.state, category } )
   }
 
   handleAddCategory = (e) => {
@@ -28,7 +28,7 @@ class Categories extends Component {
     return (
       <section className="categories">
         <ul className="categories-list">
-          {this.props.categories.map((categorie, index) => {
+          {this.props.categories.categoriesArray.map((categorie, index) => {
             return (
               <li className="categories-list_item" key={index}>
                 {categorie}
