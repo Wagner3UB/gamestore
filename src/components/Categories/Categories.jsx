@@ -2,13 +2,18 @@ import React, { Component } from "react";
 import Category from "../Category/Category";
 
 class Categories extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { categoriesArray: [] };
-    this.newCategory = this.newCategory.bind(this);
     this.currentIndex = "";
+    
+    //binds
+    this.newCategory = this.newCategory.bind(this);
+    this.deleteCategory = this.props.deleteCategory.bind(this);
+    this.deleteCategoryFromProduct = this.props.deleteCategoryFromProduct.bind(this);
   }
 
+  //State Update
   componentDidMount() {
     this.props.categories.subscribe(this.newCategory);
   }
@@ -19,12 +24,15 @@ class Categories extends Component {
     this.setState({ ...this.state, category });
   }
 
+  //Handles
   handleAddCategory = (e) => {
     if (e.key === "Enter") {
       const category = e.target.value;
       this.props.addCategory(category);
     }
   };
+
+  //Render
   render() {
     return (
       <section className="categories">
@@ -36,8 +44,8 @@ class Categories extends Component {
                 <Category
                   index={index}
                   categoryName={category}
-                  deleteCategory={this.props.deleteCategory.bind(this)}
-                  deleteCategoryFromProduct = {this.props.deleteCategoryFromProduct.bind(this)}
+                  deleteCategory={this.deleteCategory }
+                  deleteCategoryFromProduct = {this.deleteCategoryFromProduct}
                 />
               </li>
             );

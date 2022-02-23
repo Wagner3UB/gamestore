@@ -4,9 +4,16 @@ import Product from "../Product/Product";
 class Showroom extends Component {
   constructor() {
     super();
+
+    //State
     this.state = { productsArray: [] };
+
+    //Binds
     this.newProduct = this.newProduct.bind(this);
+
   }
+
+  //State Control
   componentDidMount() {
     this.props.product.subscribe(this.newProduct);
   }
@@ -17,6 +24,7 @@ class Showroom extends Component {
     this.setState({ ...this.state, product });
   }
 
+  //Render
   render() {
     return (
       <ul className="showroom">

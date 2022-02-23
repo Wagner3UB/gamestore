@@ -3,6 +3,7 @@ export default class ProductState {
     this.productsArray = [];
     this.subscribed = [];
   }
+  //State Control
   subscribe = (func) => {
     this.subscribed.push(func);
   };
@@ -14,6 +15,7 @@ export default class ProductState {
       func(this.categories);
     });
   };
+  //Modules/Functions
   addProduct = (name, description, price, category) => {
     const newProduct = new Product(name, description, price, category);
     this.productsArray.push(newProduct);
@@ -23,18 +25,15 @@ export default class ProductState {
     this.productsArray.splice(index, 1);
     this.notificate();
   };
-
-
   deleteCategoryFromProduct = (categoryName) => {
     this.productsArray = this.productsArray.map((e) => {
-      if(e.category === categoryName){
+      if (e.category === categoryName) {
         e.category = "uncategorized";
       }
       return e;
     });
     this.notificate();
-
-  }
+  };
 }
 
 class Product {

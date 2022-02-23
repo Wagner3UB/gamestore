@@ -3,6 +3,8 @@ export default class CategoriesState {
     this.categoriesArray = [];
     this.subscribed = [];
   }
+
+  //State Control
   subscribe = (func) => {
     this.subscribed.push(func);
   };
@@ -15,6 +17,7 @@ export default class CategoriesState {
     });
   };
 
+  //Modules/Functions
   addCategory = (newCategory) => {
     this.categoriesArray.push(newCategory);
     this.notificate();

@@ -7,10 +7,16 @@ class FormAdd extends Component {
     this.productDescription = "";
     this.productPrice = "";
     this.productCategory = "";
-    this.handleProductName = this.handleProductName.bind(this);
+    
+    //State
     this.state = { categoriesArray: [] };
+
+    //Binds
+    this.handleProductName = this.handleProductName.bind(this);
     this.newCategory = this.newCategory.bind(this);
   }
+
+  //State Control
   componentDidMount() {
     this.props.categories.subscribe(this.newCategory);
   }
@@ -21,6 +27,7 @@ class FormAdd extends Component {
     this.setState({ ...this.state, category });
   }
 
+  //Handles&Modules&Functions
   handleProductName(e) {
     e.stopPropagation();
     this.productName = e.target.value;
@@ -33,6 +40,12 @@ class FormAdd extends Component {
     e.stopPropagation();
     this.productPrice = e.target.value;
   };
+  handleProductOnSubmit = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    this.productCategory = document.querySelector("select").value;
+    this.addProduct();
+  };
   addProduct = (e) => {
     this.props.addProduct(
       this.productName,
@@ -41,18 +54,12 @@ class FormAdd extends Component {
       this.productCategory
     );
   };
-  callbackFunctionOnSubmit = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    this.productCategory = document.querySelector("select").value;
-    this.addProduct();
-  };
 
   render() {
     return (
       <section className="form-add">
         <h2>Insert a product</h2>
-        <form onSubmit={this.callbackFunctionOnSubmit}>
+        <form onSubmit={this.handleProductOnSubmit}>
           <label htmlFor="name">Product name</label>
           <input
             id="name"
@@ -88,7 +95,7 @@ class FormAdd extends Component {
           di Splatoon, Re Boo, Tartosso e Bowser Junior Nuove modalità di gioco
           come modalità battaglia palloncini e Bob-omba a tappeto, con circuiti
           tutti nuovi come la Periferia urbana, il Kartodromo e Double Dash
-          Modalità TV con una risoluzione massima di 1080p{" "}
+          Modalità TV con una risoluzione massima di 1080p
         </p>
       </section>
     );

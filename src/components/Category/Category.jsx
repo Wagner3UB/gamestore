@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class Category extends Component {
   handleDeleteCategory = () => {
     const index = this.props.index;
-    this.props.deleteCategory(index);
     const categoryName = this.props.categoryName;
+    this.props.deleteCategory(index);
     this.props.deleteCategoryFromProduct(categoryName);
   };
 
