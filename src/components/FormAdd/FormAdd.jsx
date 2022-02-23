@@ -11,14 +11,14 @@ class FormAdd extends Component {
     this.state = { categoriesArray: [] };
     this.newCategory = this.newCategory.bind(this);
   }
-  componentDidMount(){
-    this.props.categories.subscribe(this.newCategory)
+  componentDidMount() {
+    this.props.categories.subscribe(this.newCategory);
   }
-  componentWillUnmount(){
-    this.props.categories.unsubscribe(this.newCategory)
+  componentWillUnmount() {
+    this.props.categories.unsubscribe(this.newCategory);
   }
-  newCategory(category){
-    this.setState({...this.state, category})
+  newCategory(category) {
+    this.setState({ ...this.state, category });
   }
 
   handleProductName(e) {
@@ -37,7 +37,7 @@ class FormAdd extends Component {
     this.props.addProduct(
       this.productName,
       this.productDescription,
-      this.productPrice, 
+      this.productPrice,
       this.productCategory
     );
   };
@@ -46,7 +46,7 @@ class FormAdd extends Component {
     e.stopPropagation();
     this.productCategory = document.querySelector("select").value;
     this.addProduct();
-  }
+  };
 
   render() {
     return (
@@ -60,7 +60,7 @@ class FormAdd extends Component {
             onChange={this.handleProductName}
           />
           <select>
-            <option value={"uncategorized"} >Select Category</option>
+            <option value={"uncategorized"}>Select Category</option>
             {this.props.categories.categoriesArray.map((category, index) => {
               return <option key={index}>{category}</option>;
             })}

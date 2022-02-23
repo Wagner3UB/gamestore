@@ -2,19 +2,19 @@ import React, { Component } from "react";
 import Product from "../Product/Product";
 
 class Showroom extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = { productsArray: [] };
     this.newProduct = this.newProduct.bind(this);
   }
-  componentDidMount(){
-    this.props.product.subscribe(this.newProduct)
+  componentDidMount() {
+    this.props.product.subscribe(this.newProduct);
   }
-  componentWillUnmount(){
-    this.props.product.unsubscribe(this.newProduct)
+  componentWillUnmount() {
+    this.props.product.unsubscribe(this.newProduct);
   }
-  newProduct(product){
-    this.setState({...this.state, product})
+  newProduct(product) {
+    this.setState({ ...this.state, product });
   }
 
   render() {

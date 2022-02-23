@@ -267,7 +267,7 @@ button {
   border-radius: 5px;
   box-shadow: 2px 2px 5px #00000033;
 }
-.categories .categories-list .categories-list_item .categories-list_cancel {
+span.category-list_cancel {
   color: #823038;
   font-size: 16px;
   cursor: pointer;
