@@ -5,26 +5,32 @@ v2- Version with multiples state components
 
 <br>
 
-> `EN - This project was made as a study of JS objects, classes, arrays and iterations. Have 3 sections: `
->- The store showcase with products, where you can add products to the cart with validations (stock quantity);
+> `EN - This project was made as my first study of React: Class components, hierarchy components, State(), setState(), functions propagation & more. You can:`
+>- Add new categories pressing ENTER. The new category will be added to form;
 >
->- The cart section, where we can add/remove products, allways with stock validation, and the discount/total calculations;
+>- Add new product. You can add the new category or not. The new product will show the selected category or "uncategorized";
 >
->- A Adm panel, where we can add/remove products fron stock or add new products using the form. This form have lots of inside validations.
+>- Delete product.
 >
-> `IT - Questo progetto è stato fatto come studio dei componenti JS come oggetti, classi, arrays e iterazioni. È diviso in 3 parti:`
->- La home con una vetrina per i prodotti, dove si può aggiungere prodotti al carrello, con validazione per la quantity prodotti in magazzino;
+>- Delete category. If one or more products have the deleted category the category will be updated to "uncategorized"
 >
->- Il carrello, dove si può aggiungere/togliere prodotti, sempre con le validazione, e i calcoli dello sconto e totale dell'acquisto;
+> `IT - Questo progetto è il mio primo progetto studiando React: Class components, hierarchia dei componenti, State(), setState(), functions propagation & altri. Puoi:`
+>- Aggiungere nuove categorie premendo ENTER. La nuova categoria verrà aggiunta al form;
 >
->- Pannello Adm, dove possiamo aggiungere/togliere prodotti dal magazzino o inserire nuovi prodotti attraverso il form, dove sono presenti alcune importanti validazione.
+>- Aggiungere un nuovo prodotto. Puoi aggiungere una categoria o no. Il nuovo prodotto mostrerà la categoria selezionata o "senza categoria";
 >
-> `PT - Este projeto foi feito como estudo de componentes Javascript, como objetos, classes, arrays e iteraçōes. Foi dividido em 3 partes:`
->- Homepage com uma vitrine para os produtos, onde podemos acrescentar produtos ao carrinho, com validaçao de estoque;
+>- Cancellare un prodotto;
 >
->- Carrinho, onde podemos acrescentar/retirar produtos, sempre com validaçāo de estoque, e os cálculos de desconto e valor total da compra;
+>- Cancellare una categoria. Se la categoria è stata già vincolata ad un prodotto, questo si aggiornarà e mostrerà "senza categoria";
 >
->- Painel Adm, onde podemos adicionar/remover produtos do estoque ou inserir um novo produto via formulário, onde existem muitas validaçōes importantes.
+> `PT - Este projeto foi meu primeiro projeto estudando React: Class components, hierarchy components, State(), setState(), functions propagation & mais. Nele você poderá:`
+>- Adicionar uma nova categoria apertando ENTER. A nova categoria será adicionada ao formulário;
+>
+>- Adicionar um novo produto. Você pode ou não selecionar uma categoria. O produto irá mostrar a categoria selecionada ou "não categorizado";
+>
+>- Deletar um produto.
+>
+>- Deletar uma categoria. Se a categoria já estiver sido selecionada, o produto será atualizado e mostrará "não categorizado".
 >
 <br>
 
